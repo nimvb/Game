@@ -13,11 +13,14 @@ namespace Game {
             template <class T>
             class IWindowManager {
                 public:
-                    virtual auto create_window(std::string name) -> T = 0;
+                    virtual auto get_window(std::string name) -> T = 0;
+                    virtual auto create_window(std::string name,int width,int height,int x,int y) -> T = 0;
                     virtual auto get_window_info(std::string name) -> WindowInfo = 0 ;
 
                 private:
             };
+
+
         }
     }
 }

@@ -12,8 +12,14 @@ namespace Game {
         class RandomGenerator : public IRandomGenerator {
             public:
                 auto generate(int_t low,int_t high) -> int_t  override ;
+                static auto get_instance() -> IRandomGenerator&;
 
-        private:
+            private:
+
+                RandomGenerator();
+                RandomGenerator(const RandomGenerator&) = default;
+                RandomGenerator& operator=(const RandomGenerator&) = default;
+                static RandomGenerator instance_;
         };
     }
 }
